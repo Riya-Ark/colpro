@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for message in messages %}
+        <h5>
+            <div class="alert alert-danger mt-5">
+                {{ message }}
+            </div>
+        </h5>
+
+{% endfor %}
+<div class="row container-fluid">
+    <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+
+<form method="post" action="sign_up" class="width container rounded rounded-5 bg-light p-sm-5 m-sm-3 text-dark" style="" enctype="multipart/form-data">
+{% csrf_token %}
+<h1 style="color:#594f8d;">TUTOR REGISTRATION</h1>
+    <input type="text" name="fname" placeholder="Enter your first name" class="form-control">
+    <input type="text" name="lname" placeholder="Enter your last name" class="form-control">
+    <input type="text" name="address" placeholder="Enter your address" class="form-control">
+    <input type="email" name="email" placeholder="Enter your email" class="form-control">
+    <input type="text" name="uname" placeholder="Enter your username" class="form-control">
+    <input type="password" name="passw" placeholder="Enter password" class="form-control">
+    <input type="password" name="cpassw" placeholder="Enter confirm password" class="form-control">
+    <input type="radio" name="gender" id="male" value="Male">
+    <lebel for="male">Male</lebel>
+    <input type="radio" name="gender" id="female" value="Female">
+    <lebel for="male">Female</lebel>
+    <input type="radio" name="gender" id="Other" value="Female">
+    <lebel for="male">Other</lebel>
+    <input type="number" name="mobile" placeholder="Enter your mobile number" class="form-control">
+    <label for="photo">Select your profile photo</label><br>
+    <input type="file" name="photo" accept="image/*">
+    <button type="submit" class="form-control btn btn-success">Submit</button>
+
+</form>
+</div>
+<div class="col-sm-3"></div>
+</div>
+
+
+{% endblock %}
